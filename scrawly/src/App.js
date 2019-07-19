@@ -19,10 +19,11 @@ class App extends Component{
     return (
         <div className="App">
           <header className="App-header">
-            <Route path="/" exact component={Homepage}/>
-            <h1>Scrawly - My Doodle fun 🤢</h1>
-            <Name/>
+
           </header>
+            <Route path="/" exact component={Homepage}/>
+            <h1 className="btn btn-danger">Scrawly - My Doodle fun 🤢</h1>
+            <Name/>
         </div>
     );
 
