@@ -362,3 +362,12 @@ puis se rendre à cette adresse : http://127.0.0.1:8000/api
 ## Gestion des datafixtures
 
 composer require --dev doctrine/doctrine-fixtures-bundle
+
+## Manipulation a réaliser si on veut recréer la database avec des id à 1
+php bin/console doctrine:database:drop --force
+php bin/console doctrine:database:create
+
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate
+
+

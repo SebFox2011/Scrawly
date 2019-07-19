@@ -53,7 +53,7 @@ class AppFixtures extends Fixture
         $manager->persist ($choise1);
 
         $choise2 = new Choise();
-        $choise2-> setDate(new \DateTime('2019-10-18'));
+        $choise2-> setDate(new \DateTime('2019-10-19'));
         $choise2-> setPoll($poll);
         $choise2->addPerson($person1);
         $choise2->addPerson($person2);
