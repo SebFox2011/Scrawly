@@ -358,3 +358,7 @@ composer req server --dev
 php bin/console server:run
 
 puis se rendre à cette adresse : http://127.0.0.1:8000/api
+
+## Gestion des datafixtures
+
+composer require --dev doctrine/doctrine-fixtures-bundle

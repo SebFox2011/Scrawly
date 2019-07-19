@@ -112,4 +112,11 @@ class Person
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->getUsername();
+    }
+
+
 }
