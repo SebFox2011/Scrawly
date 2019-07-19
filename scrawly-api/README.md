@@ -23,4 +23,13 @@ API Plateform : https://api-platform.com/
 
 ## Création des entités
 Ajouter make bundle
+
 > composer require symfony/maker-bundle --dev
+
+Création des 3 entités Person, Poll et Choise avec api plateform
+
+> php bin/console make:entity (sans nom d'entité pour avoir acces a api et mettre Yes)
+ Personn (username string 255 no et email string 255 no)
+ Poll (title string 255 no et slug string 255 no et created_at datetime )
+ Choise (date datetime no) 
+ 
