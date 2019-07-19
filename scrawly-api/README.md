@@ -32,19 +32,6 @@ Création des 3 entités Person, Poll et Choise avec api plateform
  Personn (username string 255 no et email string 255 no)
  Poll (title string 255 no et slug string 255 no et created_at datetime )
  Choise (date datetime no) 
- 
- php bin/console make:entity Person
- 
-  Your entity already exists! So let's add some new fields!
- 
-  New property name (press <return> to stop adding fields):
-  > choise
- 
-  Field type (enter ? to see all types) [string]:
-  > relation
- 
-  What class should this entity be related to?:
-  > Choise
   
   php bin/console make:entity
   
@@ -101,12 +88,9 @@ Création des 3 entités Person, Poll et Choise avec api plateform
   
    Add another property? Enter the property name (or press <return> to stop adding fields):
    > 
-  
-  
              
     Success! 
-             
-  
+              
    Next: When you're ready, create a migration with make:migration
    
   MacBook-Air-de-Sebastien:scrawly-api sebfox$ php bin/console make:entity
@@ -135,13 +119,10 @@ Création des 3 entités Person, Poll et Choise avec api plateform
    updated: src/Entity/Choise.php
   
    Add another property? Enter the property name (or press <return> to stop adding fields):
-   > 
-  
-  
+   >  
              
     Success! 
              
-  
    Next: When you're ready, create a migration with make:migration
    
   MacBook-Air-de-Sebastien:scrawly-api sebfox$ php bin/console make:entity Choise
@@ -185,11 +166,8 @@ Création des 3 entités Person, Poll et Choise avec api plateform
   
    Add another property? Enter the property name (or press <return> to stop adding fields):
    > 
-  
-  
              
     Success! 
-             
   
    Next: When you're ready, create a migration with make:migration
    
@@ -252,11 +230,8 @@ Création des 3 entités Person, Poll et Choise avec api plateform
    Add another property? Enter the property name (or press <return> to stop adding fields):
    > 
   
-  
-             
     Success! 
-             
-  
+              
    Next: When you're ready, create a migration with make:migration
    
   MacBook-Air-de-Sebastien:scrawly-api sebfox$ php bin/console make:entity Person
@@ -305,11 +280,8 @@ Création des 3 entités Person, Poll et Choise avec api plateform
   
    Add another property? Enter the property name (or press <return> to stop adding fields):
    > 
-  
-  
-             
-    Success! 
-             
+              
+    Success!             
   
    Next: When you're ready, create a migration with make:migration
    
@@ -369,15 +341,20 @@ Création des 3 entités Person, Poll et Choise avec api plateform
    Add another property? Enter the property name (or press <return> to stop adding fields):
    > 
 
-             
-    Success! 
-             
+    Success!              
   
    Next: When you're ready, create a migration with make:migration
 
-## Migratiopn de la base de donnée
+## Migration de la base de donnée
 Installer migrations
 > composer req migrations
 
 php bin/console make:migration
 php bin/console doctrine:migrations:migrate
+
+## Démarrage du server
+composer req server --dev
+
+php bin/console server:run
+
+puis se rendre à cette adresse : http://127.0.0.1:8000/api
