@@ -1,6 +1,11 @@
 # Projet Scrawly
 
+## Installation de ReactJS
 npx create-react-app Scrawly
-npm i react-router-dom
-npm i redux react-redux
 
+## Installation de dependances
+
+npm i react-router-dom
+npm i redux react-redux 
+npm install --save-dev @fortawesome/fontawesome-free
+npm install bootstrap
