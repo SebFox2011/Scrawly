@@ -1,4 +1,4 @@
-# Initialisation du projet Scrawly
+# Projet Scrawly
 
 npx create-react-app Scrawly
 npm i react-router-dom
