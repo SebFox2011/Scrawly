@@ -1,40 +1,48 @@
-export const ADD_SLUG = 'ADD_SLUG'
-export const REMOVE_SLUG = 'REMOVE_SLUG'
-export const UPDATE_SLUG = 'UPDATE_SLUG'
-export const SHOW_SLUG = 'SHOW_SLUG'
-export const DASHBOARD_ADD_SUCCESS ='DASHBOARD_ADD_SUCCESS'
-export const DASHBOARD_ADD_ERROR ='DASHBOARD_ADD_ERROR'
+export const ADD_SCRAWL = 'ADD_SCRAWL'
+export const REMOVE_SCRAWL = 'REMOVE_SCRAWL'
+export const UPDATE_SCRAWL = 'UPDATE_SCRAWL'
+export const SHOW_SCRAWL = 'SHOW_SCRAWL'
+export const SCRAWL_ADD_SUCCESS ='SCRAWL_ADD_SUCCESS'
+export const SCRAWL_ADD_ERROR ='SCRAWL_ADD_ERROR'
 
 //fonction d'ajout d'item
-export function AddSlug (slug){
+export function AddScrawl (slug){
     return {//retourne un objet
-        type: ADD_SLUG,
+        type: ADD_SCRAWL,
         payload: slug//données associés à l'objet
     };
 }
 
 //fonction de suppression d'item
-export function removeSlug (slug){
+export function removeScrawl (slug){
     return {//retourne un objet
-        type: REMOVE_SLUG,
+        type: REMOVE_SCRAWL,
         payload: slug//données associés à l'objet
     };
 }
 
 //fonction de suppression d'item
-export function updateSlug (slug){
+export function updateScrawl (slug){
     return {//retourne un objet
-        type: UPDATE_SLUG,
+        type: UPDATE_SCRAWL,
         payload: slug//données associés à l'objet
     };
 }
 
 //fonction de suppression d'item
-export function showSlug (slug){
-    return {//retourne un objet
-        type: SHOW_SLUG,
-        payload: slug//données associés à l'objet
-    };
+export function showScrawl (slug){
+    // Appel l'API
+    return dispatch =>
+        fetch('http://127.0.0.1:8000/api/polls?slug=' + slug)
+            .then(reponse =>reponse.json())
+            .then(data => {
+                const results = data["hydra:member"];
+                if (results.length > 0) {
+                    dispatch(showScrawlSuccess(results[0]))
+                } else {
+                    dispatch(showScrawlError(data))
+                }
+            });
 }
 
 export function scrawlAdd(scrawl) {
@@ -46,9 +54,9 @@ export function scrawlAdd(scrawl) {
 }
 
 export function scrawlAddSuccess(scrawl) {
-    return {type: DASHBOARD_ADD_SUCCESS, payload: {scrawl: scrawl}};
+    return {type: SCRAWL_ADD_SUCCESS, payload: {scrawl: scrawl}};
 }
 
 export function scrawlAddError(error) {
-    return {type: DASHBOARD_ADD_ERROR, payload: error, error: true};
+    return {type: SCRAWL_ADD_ERROR, payload: error, error: true};
 }
