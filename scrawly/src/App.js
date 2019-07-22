@@ -3,8 +3,8 @@ import './App.css';
 import Name from "./component/Name";
 import {Route} from "react-router-dom";
 import Homepage from "./component/Homepage";
-
-
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/@fortawesome/fontawesome-free/css/all.css'
 
 class App extends Component{
 
@@ -19,10 +19,10 @@ class App extends Component{
     return (
         <div className="App">
           <header className="App-header">
-
+              <h1 className="text-white">Scrawly - My Doodle fun 🤢</h1>
           </header>
             <Route path="/" exact component={Homepage}/>
-            <h1 className="btn btn-danger">Scrawly - My Doodle fun 🤢</h1>
+
             <Name/>
         </div>
     );
