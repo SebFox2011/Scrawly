@@ -38,7 +38,7 @@ export function scrawlAdd(scrawl) {
 }
 
 export function scrawlAddSuccess(scrawl) {
-    return {type: DASHBOARD_ADD_SUCCESS, payload: {dashboard: scrawl}};
+    return {type: DASHBOARD_ADD_SUCCESS, payload: {scrawl: scrawl}};
 }
 
 export function scrawlAddError(error) {
