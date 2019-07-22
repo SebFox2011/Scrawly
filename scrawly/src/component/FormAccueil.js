@@ -6,7 +6,6 @@ class FormAccueil extends Component {
         return (
 
             <section className="homepage bg-blue">
-                <h1>Scrawly</h1>
                 <form onSubmit={event => this.handleSubmit(event)}>
 
                     <p><label htmlFor="value">Scrawly</label></p>

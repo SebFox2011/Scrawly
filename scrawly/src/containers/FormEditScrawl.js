@@ -1,8 +1,9 @@
 import {connect} from "react-redux";
 import {updateSlug} from "../actions/scrawly";
-import FormAccueil from "../component/FormAccueil"
+import FormEditScrawl from "../component/FormEditScrawl";
 
 const mapStateToProps = state => {
+
     return {
         slug: state.scrawl.slug
     }
@@ -15,4 +16,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect (
     mapStateToProps,
     mapDispatchToProps
-)(FormAccueil)
+)(FormEditScrawl)

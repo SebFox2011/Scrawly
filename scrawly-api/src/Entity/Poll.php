@@ -2,13 +2,17 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource()
+ * @ApiResource(normalizationContext={"groups"={"poll"}})
+ * @ApiFilter(SearchFilter::class, properties={"slug": "exact"})
  * @ORM\Entity(repositoryClass="App\Repository\PollRepository")
  */
 class Poll
@@ -21,26 +25,31 @@ class Poll
     private $id;
 
     /**
+     * @Groups({"poll"})
      * @ORM\Column(type="string", length=255)
      */
     private $title;
 
     /**
+     * @Groups({"poll"})
      * @ORM\Column(type="string", length=255)
      */
     private $slug;
 
     /**
+     * @Groups({"poll"})
      * @ORM\Column(type="datetime")
      */
     private $created_at;
 
     /**
+     * @Groups({"poll"})
      * @ORM\OneToMany(targetEntity="App\Entity\Person", mappedBy="poll", orphanRemoval=true)
      */
     private $persons;
 
     /**
+     * @Groups({"poll"})
      * @ORM\OneToMany(targetEntity="App\Entity\Choise", mappedBy="poll", orphanRemoval=true)
      */
     private $choise;

@@ -4,13 +4,13 @@ import "./css/normalize.css";
 import "./css/skeleton.css";
 import './App.css';
 import "./css/style.css"
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+//import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/@fortawesome/fontawesome-free/css/all.css'
 import FormAccueil from "./containers/FormAccueil";
 import FormNewScrawl from "./component/FormNewScrawl";
 import FormScrawl from "./component/FormScrawl";
 import NotFound from "./component/NotFound";
-import FormEditScrawl from "./component/FormEditScrawl";
+import FormEditScrawl from "./containers/FormEditScrawl";
 
 
 class App extends Component{
