@@ -1,6 +1,8 @@
 export const ADD_SLUG = 'ADD_SLUG'
 export const REMOVE_SLUG = 'REMOVE_SLUG'
 export const UPDATE_SLUG = 'UPDATE_SLUG'
+export const DASHBOARD_ADD_SUCCESS ='DASHBOARD_ADD_SUCCESS'
+export const DASHBOARD_ADD_ERROR ='DASHBOARD_ADD_ERROR'
 
 //fonction d'ajout d'item
 export function AddSlug (slug){
@@ -11,7 +13,7 @@ export function AddSlug (slug){
 }
 
 //fonction de suppression d'item
-export function itemRemove (slug){
+export function removeSlug (slug){
     return {//retourne un objet
         type: REMOVE_SLUG,
         payload: slug//données associés à l'objet
@@ -24,4 +26,21 @@ export function updateSlug (slug){
         type: UPDATE_SLUG,
         payload: slug//données associés à l'objet
     };
+}
+
+
+export function scrawlAdd(scrawl) {
+    let newScrawl = new scrawl();
+    return (dispatch) => newScrawl.save(scrawl).then(
+        d => dispatch(scrawlAddSuccess(d)),
+        error => dispatch(scrawlAddError(error))
+    )
+}
+
+export function scrawlAddSuccess(scrawl) {
+    return {type: DASHBOARD_ADD_SUCCESS, payload: {dashboard: scrawl}};
+}
+
+export function scrawlAddError(error) {
+    return {type: DASHBOARD_ADD_ERROR, payload: error, error: true};
 }

@@ -1,4 +1,4 @@
-import {ADD_SLUG,REMOVE_SLUG,UPDATE_SLUG} from "../actions/scrawly";
+import {ADD_SLUG,REMOVE_SLUG,UPDATE_SLUG,DASHBOARD_ADD_SUCCESS,DASHBOARD_ADD_ERROR} from "../actions/scrawly";
 
 const initialState = { //initialisation à vide des items
     scrawl: {
@@ -20,6 +20,10 @@ function scrawlyApp(state=initialState,action) { //etat initial de l'applicaiton
             let newState = Object.assign({}, state);
             newState.scrawl.slug = action.payload;
             return newState;
+
+        case DASHBOARD_ADD_SUCCESS:
+
+        case DASHBOARD_ADD_ERROR:
         default:
             return state;
     }

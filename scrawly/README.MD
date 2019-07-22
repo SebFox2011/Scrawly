@@ -12,3 +12,5 @@ npm i redux react-redux
 npm install --save-dev @fortawesome/fontawesome-free
 
 npm install bootstrap
+
+npm install --save redux-thunk -> persistance des données
