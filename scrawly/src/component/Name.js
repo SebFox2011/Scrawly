@@ -11,7 +11,7 @@ class Name extends Component {
     }
 
     componentDidMount() {
-        fetch('http://127.0.0.1:8000/api/choises')
+        fetch('http://127.0.0.1:8000/api/pools')
             .then(reponse =>reponse.json())
             .then(data => this.setState({
                 poll: data["hydra:member"]

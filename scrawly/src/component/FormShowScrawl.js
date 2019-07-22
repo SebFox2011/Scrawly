@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class FormScrawl extends Component {
+class FormShowScrawl extends Component {
     render() {
         return (
             <div>
@@ -10,4 +10,4 @@ class FormScrawl extends Component {
     }
 }
 
-export default FormScrawl;
+export default FormShowScrawl;

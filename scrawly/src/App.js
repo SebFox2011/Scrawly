@@ -8,7 +8,7 @@ import "./css/style.css"
 import '../node_modules/@fortawesome/fontawesome-free/css/all.css'
 import FormAccueil from "./containers/FormAccueil";
 import FormNewScrawl from "./component/FormNewScrawl";
-import FormScrawl from "./component/FormScrawl";
+import FormShowScrawl from "./component/FormShowScrawl";
 import NotFound from "./component/NotFound";
 import FormEditScrawl from "./containers/FormEditScrawl";
 
@@ -31,7 +31,7 @@ class App extends Component{
       <Switch>
           <Route path="/" exact component={FormAccueil}/>
           <Route path="/new" exact component={FormNewScrawl}/>
-          <Route path="/scrawl" exact component={FormScrawl}/>
+          <Route path="/scrawl" exact component={FormShowScrawl}/>
           <Route path="/edit" exact component={FormEditScrawl}/>
           <Route component={NotFound}/>
       </Switch>
