@@ -10,7 +10,7 @@ class FormAccueil extends Component {
 
                     <p><label htmlFor="value">Scrawly</label></p>
                     <p><input type="text" name="value" placeholder="Scrawl slug" value={this.props.slug}
-                              onChange={event => this.props.update(event.target.value)}/>
+                              onChange={event => this.props.show(event.target.value)}/>
                         <input type="submit" value="GO" className="btn btn-danger"/>
                     </p>
                 </form>

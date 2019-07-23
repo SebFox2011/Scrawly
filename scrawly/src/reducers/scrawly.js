@@ -1,4 +1,11 @@
-import {ADD_SCRAWL,REMOVE_SCRAWL,UPDATE_SCRAWL,SCRAWL_ADD_SUCCESS,SCRAWL_ADD_ERROR} from "../actions/scrawly";
+import {
+    ADD_SCRAWL,
+    REMOVE_SCRAWL,
+    UPDATE_SCRAWL,
+    SCRAWL_ADD_SUCCESS,
+    SCRAWL_ADD_ERROR,
+    SHOW_SCRAWL
+} from "../actions/scrawly";
 
 const initialState = { //initialisation à vide des items
     scrawl: {
@@ -25,6 +32,8 @@ function scrawlyApp(state=initialState,action) { //etat initial de l'applicaiton
         case SCRAWL_ADD_SUCCESS:
 
         case SCRAWL_ADD_ERROR:
+
+        case SHOW_SCRAWL:
 
         default:
             return state;

@@ -53,6 +53,14 @@ export function scrawlAdd(scrawl) {
     )
 }
 
+export function showScrawlSuccess (scrawl) {
+    return {type: SHOW_SCRAWL, payload: {scrawl: scrawl}};
+}
+
+export function showScrawlError (error) {
+    return {type: SCRAWL_ADD_SUCCESS, payload: error, error: true};
+}
+
 export function scrawlAddSuccess(scrawl) {
     return {type: SCRAWL_ADD_SUCCESS, payload: {scrawl: scrawl}};
 }
