@@ -17,7 +17,7 @@ const initialState = { //initialisation à vide des items
 };
 
 function scrawlyApp(state=initialState,action) { //etat initial de l'applicaiton initialisé a initialState par défaurt
-    switch (action.type) { // switch ItemADD ou Item remove
+    switch (action.type) { // switch sur les actions
         case ADD_SCRAWL:
             return {items:[...state.items,action.payload]}; // ...state.item est un tableau
                                                             // : est equivalent à == mais pour un objet
