@@ -8,7 +8,7 @@ import "./css/style.css"
 import '../node_modules/@fortawesome/fontawesome-free/css/all.css'
 import FormAccueil from "./containers/FormAccueil";
 import FormNewScrawl from "./component/FormNewScrawl";
-import FormShowScrawl from "./component/FormShowScrawl";
+import FormShowScrawl from "./containers/FormShowScrawl";
 import NotFound from "./component/NotFound";
 import FormEditScrawl from "./containers/FormEditScrawl";
 

@@ -34,7 +34,10 @@ function scrawlyApp(state=initialState,action) { //etat initial de l'applicaiton
         case SCRAWL_ADD_ERROR:
 
         case SHOW_SCRAWL:
-
+            return {
+                ...state,
+                scrawl: action.payload
+            };
         default:
             return state;
     }

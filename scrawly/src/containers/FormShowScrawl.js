@@ -3,14 +3,13 @@ import {showScrawl} from "../actions/scrawly";
 import FormShowScrawl from "../component/FormShowScrawl";
 
 const mapStateToProps = state => {
-
     return {
-        slug: state.scrawl.slug
+        scrawl: state.scrawl
     }
 };
 
 const mapDispatchToProps = dispatch => ({
-    show: slug => dispatch(showScrawl(slug)),
+
 });
 
 export default connect (

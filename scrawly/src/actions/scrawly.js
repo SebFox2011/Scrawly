@@ -54,7 +54,7 @@ export function scrawlAdd(scrawl) {
 }
 
 export function showScrawlSuccess (scrawl) {
-    return {type: SHOW_SCRAWL, payload: {scrawl: scrawl}};
+    return {type: SHOW_SCRAWL, payload: scrawl };
 }
 
 export function showScrawlError (error) {

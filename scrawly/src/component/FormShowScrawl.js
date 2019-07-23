@@ -4,7 +4,9 @@ class FormShowScrawl extends Component {
     render() {
         return (
             <div>
-                <h1>Affichage du scrawl</h1>
+                <h2>{this.props.scrawl.title}</h2>
+                <p>{this.props.scrawl.slug}</p>
+
             </div>
         );
     }
