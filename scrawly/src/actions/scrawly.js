@@ -35,7 +35,7 @@ export function updateTitle (title){
 //fonction de modification d'un Scrawl
 export function editScrawl (slug){
     return dispatch =>
-        fetch('http://127.0.0.1:8000/api/polls?slug=' + slug)
+        fetch(process.env.REACT_APP_API +"/polls?slug=" + slug)
             .then(reponse =>reponse.json())
             .then(data => {
                 const results = data["hydra:member"];
@@ -59,7 +59,7 @@ export function updateScrawl (slug){
 export function showScrawl (slug){
     // Appel l'API
     return dispatch =>
-        fetch('http://127.0.0.1:8000/api/polls?slug=' + slug)
+        fetch(process.env.REACT_APP_API +"/polls?slug=" + slug)
             .then(reponse =>reponse.json())
             .then(data => {
                 const results = data["hydra:member"];
