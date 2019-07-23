@@ -32,7 +32,7 @@ class App extends Component{
           <Route path="/" exact component={FormAccueil}/>
           <Route path="/new" exact component={FormNewScrawl}/>
           <Route path="/scrawl/:slug"  exact component={FormShowScrawl}/>
-          <Route path="/edit" exact component={FormEditScrawl}/>
+          <Route path="/edit/:slug" exact component={FormEditScrawl}/>
           <Route component={NotFound}/>
       </Switch>
       </div>

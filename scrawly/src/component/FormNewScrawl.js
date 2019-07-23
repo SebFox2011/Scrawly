@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
+import {Redirect,NavLink} from "react-router-dom";
 
 class FormNewScrawl extends Component {
     render() {
+        if(this.props.id) {
+            return <Redirect to={"/edit/" + this.props.slug}/>
+        }
         return (
             <React.Fragment>
                 <section className="bg-blue">
@@ -21,9 +25,9 @@ class FormNewScrawl extends Component {
                             <input type="text" id="slug" placeholder="Scrawl slug" value={this.props.slug}
                                    onChange={event => this.props.updateSlug(event.target.value)}/>
                         </div>
-                        <button type="submit" className="button button-primary"><i className="fa fa-arrow-right"></i>Create
+                        <NavLink to={"/edit/" + this.props.slug} type="submit" className="button button-primary"><i className="fa fa-arrow-right"></i>Create
                             and add new dates
-                        </button>
+                        </NavLink>
                     </form>
 
                 </section>

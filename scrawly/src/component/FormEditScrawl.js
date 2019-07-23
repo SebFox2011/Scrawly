@@ -11,7 +11,7 @@ class FormEditScrawl extends Component {
                 <section className="container form-new">
 
                     <label htmlFor="title">Title</label>
-                    <input type="text" id="title" value="Julien's birthday"/>
+                    <input type="text" id="title" value={this.props.title}/>
                         <ul>
                             <li>12 January 2020</li>
                             <li>13 January 2020</li>
