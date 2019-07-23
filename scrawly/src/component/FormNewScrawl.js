@@ -10,14 +10,16 @@ class FormNewScrawl extends Component {
 
                 <section className="container form-new">
 
-                    < form action="#">
-                        < div>
-                            < label htmlFor="title"> Titre </label>
-                            <input type="text" id="title" placeholder="Julien's birthday"/>
+                    <form action="#">
+                        <div>
+                            <label htmlFor="title"> Titre </label>
+                            <input type="text" id="title" placeholder="Julien's birthday" value={this.props.title}
+                                   onChange={event => this.props.updateTitle(event.target.value)}/>
                         </div>
                         <div>
                             <label htmlFor="slug"> Slug </label>
-                            <input type="text" id="slug" placeholder="Scrawl slug"/>
+                            <input type="text" id="slug" placeholder="Scrawl slug" value={this.props.slug}
+                                   onChange={event => this.props.updateSlug(event.target.value)}/>
                         </div>
                         <button type="submit" className="button button-primary"><i className="fa fa-arrow-right"></i>Create
                             and add new dates

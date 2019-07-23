@@ -1,16 +1,18 @@
 import {connect} from "react-redux";
-import {scrawlAdd} from "../actions/scrawly";
+import {updateSlug, updateTitle} from "../actions/scrawly";
 import FormNewScrawl from "../component/FormNewScrawl";
 
 const mapStateToProps = state => {
 
     return {
-        slug: state.scrawl.slug
+        slug: state.scrawl.slug,
+        title: state.scrawl.title
     }
 };
 
 const mapDispatchToProps = dispatch => ({
-    add: slug => dispatch(scrawlAdd(slug)),
+    updateSlug: slug => dispatch(updateSlug(slug)),
+    updateTitle: title => dispatch(updateTitle(title))
 });
 
 export default connect (

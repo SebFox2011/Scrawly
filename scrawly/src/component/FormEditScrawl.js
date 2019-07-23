@@ -5,13 +5,13 @@ class FormEditScrawl extends Component {
         return (
             <React.Fragment>
                 <section className="bg-blue">
-                    <h1>New Scrawl</h1>
+                    <h1>Edition d'un scrawl</h1>
                 </section>
 
                 <section className="container form-new">
 
                     <label htmlFor="title">Title</label>
-                    <input type="text" id="title" value="Julien's birthday" disabled/>
+                    <input type="text" id="title" value="Julien's birthday"/>
                         <ul>
                             <li>12 January 2020</li>
                             <li>13 January 2020</li>

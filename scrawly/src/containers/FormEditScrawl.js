@@ -5,7 +5,8 @@ import FormEditScrawl from "../component/FormEditScrawl";
 const mapStateToProps = state => {
 
     return {
-        slug: state.scrawl.slug
+        slug: state.scrawl.slug,
+        id: state.scrawl["@id"]
     }
 };
 
