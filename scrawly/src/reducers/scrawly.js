@@ -2,22 +2,25 @@ import {
     ADD_SCRAWL,
     REMOVE_SCRAWL,
     UPDATE_SCRAWL,
-    SCRAWL_ADD_SUCCESS,
-    SCRAWL_ADD_ERROR,
     SHOW_SCRAWL_SUCCESS,
     SHOW_SCRAWL_ERROR,
     UPDATE_TITLE,
-    UPDATE_SLUG
+    UPDATE_SLUG,
+    CREATE_SCRAWL_LOADING,
+    CREATE_SCRAWL_ERROR,
+    CREATE_SCRAWL_SUCCESS
 } from "../actions/scrawly";
 import slugify from "slugify";
 
 const initialState = { //initialisation à vide des items
     scrawl: {
         title: '',
-        slug: 'test',
+        slug: '',
         choices: []
     }, // state.todoApp.items pour récupérer les items
-    error: null
+    error: "",
+    scrawlLoading: false,
+    createScrawlLoading: false
 };
 
 function scrawlyApp(state = initialState, action) { //etat initial de l'applicaiton initialisé a initialState par défaurt
@@ -44,21 +47,30 @@ function scrawlyApp(state = initialState, action) { //etat initial de l'applicai
                 scrawl: {...state.scrawl, title: action.payload, slug: slugify(action.payload, {lower: true})}
             };
 
-        case SCRAWL_ADD_SUCCESS:
-            break;
-
-        case SCRAWL_ADD_ERROR:
-            break;
-
         case SHOW_SCRAWL_SUCCESS:
             return {
                 ...state,
                 scrawl: action.payload
             };
         case SHOW_SCRAWL_ERROR:
-            return {...state,
-                error:"Scrawl introuvable"
-                }
+            return {
+                ...state,
+                error: "Scrawl introuvable"
+            };
+        case CREATE_SCRAWL_LOADING:
+            return {...state, createScrawlLoading: true};
+        case CREATE_SCRAWL_SUCCESS:
+            return {
+                ...state,
+                scrawl: action.payload,
+                createScrawlLoading:false
+            };
+        case CREATE_SCRAWL_ERROR:
+            return {
+                ...state,
+                error:"Erreur lors de la création du Scrawl !",
+                createScrawlLoading:false
+            };
         default:
             return state;
     }

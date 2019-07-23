@@ -14,6 +14,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
  * @ApiResource(normalizationContext={"groups"={"poll"}})
  * @ApiFilter(SearchFilter::class, properties={"slug": "exact"})
  * @ORM\Entity(repositoryClass="App\Repository\PollRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class Poll
 {
@@ -166,5 +167,11 @@ class Poll
     public function __toString()
     {
         return $this->getTitle();
+    }
+    /**
+     * @ORM\PrePersist
+     */
+    public function prePersit(){
+        $this->setCreatedAt(new \DateTime());
     }
 }

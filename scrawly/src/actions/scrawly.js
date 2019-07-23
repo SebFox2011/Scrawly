@@ -3,6 +3,9 @@ export const REMOVE_SCRAWL = 'REMOVE_SCRAWL'
 export const UPDATE_SCRAWL = 'UPDATE_SCRAWL'
 export const UPDATE_SLUG = 'UPDATE_SLUG'
 export const UPDATE_TITLE = 'UPDATE_TITLE'
+export const CREATE_SCRAWL_LOADING = 'CREATE_SCRAWL_LOADING'
+export const CREATE_SCRAWL_SUCCESS = 'CREATE_SCRAWL_SUCCESS'
+export const CREATE_SCRAWL_ERROR = 'CREATE_SCRAWL_ERROR'
 export const SHOW_SCRAWL_SUCCESS = 'SHOW_SCRAWL_SUCCESS'
 export const SHOW_SCRAWL_ERROR ='SHOW_SCRAWL_ERROR'
 export const SCRAWL_ADD_SUCCESS ='SCRAWL_ADD_SUCCESS'
@@ -94,4 +97,50 @@ export function scrawlAddSuccess(scrawl) {
 
 export function scrawlAddError(error) {
     return {type: SCRAWL_ADD_ERROR, payload: error, error: true};
+}
+
+/*
+Create Scrawl
+ */
+
+export function createScrawl (scrawl){
+    // Appel l'API
+    return dispatch => {
+        dispatch(createScrawlLoading());
+        fetch(process.env.REACT_APP_API + "/polls", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(scrawl)
+        })
+            .then(reponse => reponse.json())
+            .then(data => {
+                if (data["@type"] !== "hydra:Error") {
+                    dispatch(createScrawlSuccess(data))
+                } else {
+                    dispatch(createScrawlError(data))
+                }
+
+            });
+    }
+}
+
+export function createScrawlSuccess(scrawl) {
+    return {
+        type: CREATE_SCRAWL_SUCCESS,
+        payload:scrawl
+    }
+}
+
+export function createScrawlError(scrawl) {
+    return {
+        type: CREATE_SCRAWL_ERROR
+    }
+}
+
+export function createScrawlLoading() {
+    return {
+        type: CREATE_SCRAWL_LOADING
+    }
 }
