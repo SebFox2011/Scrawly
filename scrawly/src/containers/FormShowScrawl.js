@@ -1,5 +1,7 @@
 import {connect} from "react-redux";
 import FormShowScrawl from "../component/FormShowScrawl";
+import {showScrawl} from "../actions/scrawly";
+
 
 const mapStateToProps = state => {
     return {
@@ -8,7 +10,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-
+    show: slug => dispatch(showScrawl(slug))
 });
 
 export default connect (
