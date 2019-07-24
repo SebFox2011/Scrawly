@@ -12,17 +12,13 @@ class FormShowScrawl extends Component {
         );
 
         const date = choise.map((choice) =>
-            <p>{choice.date} </p>
+            <p>{choice.date.slice(0,10)} </p>
         );
         return (
             <div>
                 <h2>{title}</h2>
                 <p>{slug}</p>
-                {this.props.scrawl.persons.map((persons, index) => {
-                    console.log("persons");
-                    return (<p key={index} persons={persons}/>)
 
-                })}
                 {people}
                 {date}
 
