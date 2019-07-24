@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
 
-
-
 class FormEditScrawl extends Component {
 
     handleSubmit(event){
         event.preventDefault();
-        //this.props.add(this.props.slug);
     }
 
     render() {

@@ -1,5 +1,4 @@
 import {connect} from "react-redux";
-import {showScrawl} from "../actions/scrawly";
 import FormShowScrawl from "../component/FormShowScrawl";
 
 const mapStateToProps = state => {
