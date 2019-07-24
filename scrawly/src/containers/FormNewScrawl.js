@@ -6,6 +6,7 @@ const mapStateToProps = state => {
     return {
         slug: state.scrawl.slug,
         title: state.scrawl.title,
+        id:state.scrawl["@id"],
         loading: state.createScrawlLoading
     }
 };

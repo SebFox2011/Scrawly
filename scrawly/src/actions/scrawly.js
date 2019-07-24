@@ -34,6 +34,7 @@ export function createScrawl (scrawl){
                 }
 
             });
+
     }
 }
 
@@ -70,21 +71,6 @@ export function updateTitle (title){
     return {type: UPDATE_TITLE, payload:title};
 }
 
-//fonction de modification d'un Scrawl
-export function editScrawl (slug){
-    return dispatch =>
-        fetch(process.env.REACT_APP_API +"/polls?slug=" + slug)
-            .then(reponse =>reponse.json())
-            .then(data => {
-                const results = data["hydra:member"];
-                if (results.length > 0) {
-                    dispatch(showScrawlSuccess(results[0]))
-                } else {
-                    dispatch(showScrawlError(data))
-                }
-            });
-}
-
 //fonction de mise à jour de Scrawl
 export function updateScrawl (slug){
     return {//retourne un objet
@@ -106,6 +92,8 @@ export function showScrawl (slug){
                 } else {
                     dispatch(showScrawlError(data))
                 }
+                console.log(data)
+                //console.log(data.map(choise=>choise.id))
             });
 }
 

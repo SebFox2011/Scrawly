@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Redirect,NavLink} from "react-router-dom";
 
 class FormNewScrawl extends Component {
     handleSubmit(event) {
@@ -7,9 +8,13 @@ class FormNewScrawl extends Component {
             title: this.props.title,
             slug: this.props.slug
         })
+
     }
 
     render() {
+        if(this.props.id) {
+            return <Redirect to={"/edit/" + this.props.slug}/>
+        }
         return (
             <React.Fragment>
                 <section className="bg-blue">
