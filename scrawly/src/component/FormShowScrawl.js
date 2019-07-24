@@ -4,27 +4,24 @@ import md5 from "md5";
 
 class FormShowScrawl extends Component {
     render() {
-        const gravatar = 'https://gravatar.com/avatar/' + md5('sebfox@gmail.com') + '?s=32&d=robohash';
+        //const gravatar = 'https://gravatar.com/avatar/' + md5('sebfox@gmail.com') + '?s=32&d=robohash';
+
+        const gravatar = 'https://gravatar.com/avatar/';
         const {title, slug, persons, choise} = this.props.scrawl;
 
         const people = persons.map((person) =>
-            <p>{person.username} {person.email} </p>
+            <p><img src={gravatar + md5(person.email) + '?s=32&d=robohash'}
+                    alt="Gravatar"/> {person.username} {person.email} </p>
         );
 
         const date = choise.map((choice) =>
-            <p>{choice.date.slice(0,10)} </p>
+            <p>{choice.date.slice(0, 10)} </p>
         );
         return (
             <div>
-                <h2>{title}</h2>
-                <p>{slug}</p>
-
+                <h2>{title} / slug : {slug} </h2>
                 {people}
                 {date}
-
-                <p><img src={gravatar}
-                        alt="Gravatar"/>{this.props.scrawl.persons[0].username} {this.props.scrawl.persons[0].email}</p>
-
             </div>
         );
     }
