@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import md5 from "md5";
+import HeadScrawl from "./FormShowScrawlComponent/HeadScrawl";
+import BodyScrawl from "./FormShowScrawlComponent/BodyScrawl";
 
 
 class FormShowScrawl extends Component {
@@ -20,7 +22,7 @@ class FormShowScrawl extends Component {
         const gravatar = 'https://gravatar.com/avatar/';
         const {title, slug, persons, choise} = this.props.scrawl;
 
-        const people = persons.map((person) =>
+        /*const people = persons.map((person) =>
             <p><img src={gravatar + md5(person.email) + '?s=32&d=robohash'}
                     alt="Gravatar"/> {person.username} {person.email} </p>
         );
@@ -35,73 +37,30 @@ class FormShowScrawl extends Component {
 
         choise.map((choice) =>
             dates.push({choice})
+        );*/
+
+       const TBodySCrawl = persons.map(person =>
+           <BodyScrawl key={person['@id']} person={person}/>
+       );
+
+       const THeadScrawl = choise.map(choise=>
+            <HeadScrawl key={choise['@id']} choise={choise}/>
         );
 
-        choise.map((choise,index)=>
-            
-        );
-
-        console.log(dates)
         return (
 
             <div>
                 <h2>{title} / slug : {slug} </h2>
-                {people}
-                {date}
                 <table className="poll">
                     <thead>
                     <tr>
                         <th></th>
-                        <th>
-                            <div className="date-container">
-                                <div className="month">Jan</div>
-                                <div className="date">12</div>
-                                <div className="day">Saturday</div>
-                            </div>
-                        </th>
-                        <th>
-                            <div className="date-container">
-                                <div className="month">Jan</div>
-                                <div className="date">13</div>
-                                <div className="day">Sunday</div>
-                            </div>
-                        </th>
+                        {THeadScrawl}
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>
-                            <div className="user-container">
-                                <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=32"/>
-                                <span>John Doe</span>
-                            </div>
-                        </td>
-                        <td className="available"><i className="fa fa-3x fa-check-circle"></i></td>
-                        <td className="available"><i className="fa fa-3x fa-check-circle"></i></td>
-                        <td>
-                            <a href="#">
-                                <i className="fa fa-2x fa-edit"></i>
-                            </a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <div className="user-container">
-                                <img src="https://www.gravatar.com/avatar/7fda1da9c34e978d5990afd7f58ca0f4?s=32"/>
-                                <span>Howard Thomson</span>
-                            </div>
-                        </td>
-                        <td className="available"><i className="fa fa-3x fa-check-circle"></i></td>
-                        <td className="unavailable"><i className="fa fa-3x fa-times-circle"></i></td>
-
-                        <td>
-                            <a href="#">
-                                <i className="fa fa-2x fa-edit"></i>
-                            </a>
-                        </td>
-                    </tr>
+                        {TBodySCrawl}
                     <tr>
                         <td>
                             <div className="user-form-container">
