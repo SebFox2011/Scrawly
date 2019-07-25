@@ -6,12 +6,13 @@ import FormNewScrawl from "./containers/FormNewScrawl";
 import FormShowScrawl from "./containers/FormShowScrawl";
 import FormNotFound from "./component/FormNotFound";
 import FormEditScrawl from "./containers/FormEditScrawl";
+
 //import des fichiers de css
+import '../node_modules/@fortawesome/fontawesome-free/css/all.css'
 import "./css/normalize.css";
 import "./css/skeleton.css";
 import './App.css';
 import "./css/style.css"
-import '../node_modules/@fortawesome/fontawesome-free/css/all.css'
 
 class App extends Component{
 

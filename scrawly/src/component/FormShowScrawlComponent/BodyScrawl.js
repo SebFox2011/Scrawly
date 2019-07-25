@@ -7,8 +7,6 @@ class BodyScrawl extends Component {
         const people = this.props.person;
         const gravatar = 'https://gravatar.com/avatar/'+ md5(people.email) + '?s=32&d=robohash';
 
-        console.log(gravatar);
-
         return (
             <tr>
                 <td>

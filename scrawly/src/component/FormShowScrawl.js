@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import md5 from "md5";
 import HeadScrawl from "./FormShowScrawlComponent/HeadScrawl";
 import BodyScrawl from "./FormShowScrawlComponent/BodyScrawl";
+import CheckBoxScrawl from "./FormShowScrawlComponent/CheckBoxScrawl";
 
 
 class FormShowScrawl extends Component {
@@ -22,6 +23,10 @@ class FormShowScrawl extends Component {
 
         const THeadScrawl = choise.map(choise =>
             <HeadScrawl key={choise['@id']} choise={choise}/>
+        );
+
+        const TCheckBoxScrawl = choise.map(choise =>
+            <CheckBoxScrawl key={choise['@id']} choise={choise}/>
         );
 
         return (
@@ -45,12 +50,7 @@ class FormShowScrawl extends Component {
                                 <input type="text" name="name" placeholder="Fullname"/>
                             </div>
                         </td>
-                        <td>
-                            <input type="checkbox"/>
-                        </td>
-                        <td>
-                            <input type="checkbox"/>
-                        </td>
+                        {TCheckBoxScrawl}
                         <td>
                             <button type="submit" className="button button-primary">
                                 <i className="fa fa-2x fa-save"></i>
