@@ -5,16 +5,16 @@ export const CREATE_SCRAWL_LOADING = 'CREATE_SCRAWL_LOADING'
 export const CREATE_SCRAWL_SUCCESS = 'CREATE_SCRAWL_SUCCESS'
 export const CREATE_SCRAWL_ERROR = 'CREATE_SCRAWL_ERROR'
 export const SHOW_SCRAWL_SUCCESS = 'SHOW_SCRAWL_SUCCESS'
-export const SHOW_SCRAWL_ERROR ='SHOW_SCRAWL_ERROR'
-export const SCRAWL_ADD_SUCCESS ='SCRAWL_ADD_SUCCESS'
-export const SCRAWL_ADD_ERROR ='SCRAWL_ADD_ERROR'
+export const SHOW_SCRAWL_ERROR = 'SHOW_SCRAWL_ERROR'
+export const SCRAWL_ADD_SUCCESS = 'SCRAWL_ADD_SUCCESS'
+export const SCRAWL_ADD_ERROR = 'SCRAWL_ADD_ERROR'
 
 
 /*
 Create Scrawl
  */
 
-export function createScrawl (scrawl){
+export function createScrawl(scrawl) {
     // Appel l'API
     return dispatch => {
         dispatch(createScrawlLoading());
@@ -41,7 +41,7 @@ export function createScrawl (scrawl){
 export function createScrawlSuccess(scrawl) {
     return {
         type: CREATE_SCRAWL_SUCCESS,
-        payload:scrawl
+        payload: scrawl
     }
 }
 
@@ -60,19 +60,19 @@ export function createScrawlLoading() {
 /*
 Mise à jour d'un slug
  */
-export function updateSlug (slug){
-    return {type: UPDATE_SLUG, payload:slug};
+export function updateSlug(slug) {
+    return {type: UPDATE_SLUG, payload: slug};
 }
 
 /*
 Mise à jour d'un titre
  */
-export function updateTitle (title){
-    return {type: UPDATE_TITLE, payload:title};
+export function updateTitle(title) {
+    return {type: UPDATE_TITLE, payload: title};
 }
 
 //fonction de mise à jour de Scrawl
-export function updateScrawl (slug){
+export function updateScrawl(slug) {
     return {//retourne un objet
         type: UPDATE_SCRAWL,
         payload: slug//données associés à l'objet
@@ -80,11 +80,11 @@ export function updateScrawl (slug){
 }
 
 //fonction d'affichage de Scrawl
-export function showScrawl (slug){
+export function showScrawl(slug) {
     // Appel l'API
     return dispatch =>
-        fetch(process.env.REACT_APP_API +"/polls?slug=" + slug)
-            .then(reponse =>reponse.json())
+        fetch(process.env.REACT_APP_API + "/polls?slug=" + slug)
+            .then(reponse => reponse.json())
             .then(data => {
                 const results = data["hydra:member"];
                 if (results.length > 0) {
@@ -104,11 +104,11 @@ export function scrawlAdd(scrawl) {
 }
 
 
-export function showScrawlSuccess (scrawl) {
-    return {type: SHOW_SCRAWL_SUCCESS, payload: scrawl };
+export function showScrawlSuccess(scrawl) {
+    return {type: SHOW_SCRAWL_SUCCESS, payload: scrawl};
 }
 
-export function showScrawlError (error) {
+export function showScrawlError(error) {
     return {type: SHOW_SCRAWL_ERROR, payload: error, error: true};
 }
 

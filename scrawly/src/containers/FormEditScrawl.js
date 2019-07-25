@@ -7,7 +7,7 @@ const mapStateToProps = state => {
     return {
         slug: state.scrawl.slug,
         id: state.scrawl["@id"],
-        title:state.scrawl.title
+        title: state.scrawl.title
     }
 };
 
@@ -16,7 +16,7 @@ const mapDispatchToProps = dispatch => ({
     updateTitle: title => dispatch(updateTitle(title))
 });
 
-export default connect (
+export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(FormEditScrawl)

@@ -11,10 +11,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
     update: slug => dispatch(updateScrawl(slug)),
-    show:slug => dispatch(showScrawl(slug))
+    show: slug => dispatch(showScrawl(slug))
 });
 
-export default connect (
+export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(FormAccueil)

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 class FormEditScrawl extends Component {
 
-    handleSubmit(event){
+    handleSubmit(event) {
         event.preventDefault();
     }
 

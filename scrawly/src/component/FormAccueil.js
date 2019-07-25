@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Redirect,NavLink} from "react-router-dom";
+import {Redirect, NavLink} from "react-router-dom";
 
 
 class FormAccueil extends Component {
@@ -11,7 +11,7 @@ class FormAccueil extends Component {
 
     render() {
 
-        if(this.props.id) {
+        if (this.props.id) {
             return <Redirect to={"/scrawl/" + this.props.slug}/>
         }
 
@@ -26,7 +26,7 @@ class FormAccueil extends Component {
                         <input type="submit" value="GO" className="btn btn-danger"/>
                     </p>
                 </form>
-                <NavLink className="btn btn-danger" to="/new" type="submit" >
+                <NavLink className="btn btn-danger" to="/new" type="submit">
                     <i className="fa fa-plus"></i> Create a new Scrawl
                 </NavLink>
             </section>

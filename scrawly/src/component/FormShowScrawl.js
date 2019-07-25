@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import md5 from "md5";
 import HeadScrawl from "./FormShowScrawlComponent/HeadScrawl";
 import BodyScrawl from "./FormShowScrawlComponent/BodyScrawl";
 import CheckBoxScrawl from "./FormShowScrawlComponent/CheckBoxScrawl";
@@ -13,9 +12,7 @@ class FormShowScrawl extends Component {
     }
 
     render() {
-
-        const gravatar = 'https://gravatar.com/avatar/';
-        const {title, slug, persons, choise} = this.props.scrawl;
+        const {title, persons, choise} = this.props.scrawl;
 
         const TBodySCrawl = persons.map(person =>
             <BodyScrawl key={person['@id']} person={person} choise={choise}/>

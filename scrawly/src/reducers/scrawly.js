@@ -61,14 +61,14 @@ function scrawlyApp(state = initialState, action) { //etat initial de l'applicai
             return {
                 ...state,
                 scrawl: action.payload,
-                createScrawlLoading:false
+                createScrawlLoading: false
             };
 
         case CREATE_SCRAWL_ERROR:
             return {
                 ...state,
-                error:"Erreur lors de la création du Scrawl !",
-                createScrawlLoading:false
+                error: "Erreur lors de la création du Scrawl !",
+                createScrawlLoading: false
             };
 
         default:
