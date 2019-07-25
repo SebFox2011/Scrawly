@@ -18,7 +18,7 @@ class FormShowScrawl extends Component {
         const {title, slug, persons, choise} = this.props.scrawl;
 
         const TBodySCrawl = persons.map(person =>
-            <BodyScrawl key={person['@id']} person={person}/>
+            <BodyScrawl key={person['@id']} person={person} choise={choise}/>
         );
 
         const THeadScrawl = choise.map(choise =>
@@ -32,7 +32,7 @@ class FormShowScrawl extends Component {
         return (
 
             <div>
-                <h2>{title} / slug : {slug} </h2>
+                <h2>{title} </h2>
                 <table className="poll">
                     <thead>
                     <tr>

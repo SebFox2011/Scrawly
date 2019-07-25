@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 class CheckBoxScrawl extends Component {
     render() {
+
         return (
             <React.Fragment>
                 <td>
