@@ -92,8 +92,6 @@ export function showScrawl (slug){
                 } else {
                     dispatch(showScrawlError(data))
                 }
-                console.log(data)
-                //console.log(data.map(choise=>choise.id))
             });
 }
 

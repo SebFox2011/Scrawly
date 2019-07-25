@@ -10,6 +10,11 @@ class FormShowScrawl extends Component {
     }
 
     render() {
+        let participants = [];
+        let dates =[];
+
+
+
         //const gravatar = 'https://gravatar.com/avatar/' + md5('sebfox@gmail.com') + '?s=32&d=robohash';
 
         const gravatar = 'https://gravatar.com/avatar/';
@@ -20,10 +25,25 @@ class FormShowScrawl extends Component {
                     alt="Gravatar"/> {person.username} {person.email} </p>
         );
 
+        persons.map((person) =>
+            participants.push({person})
+        );
+
         const date = choise.map((choice) =>
             <p>{choice.date.slice(0, 10)} </p>
         );
+
+        choise.map((choice) =>
+            dates.push({choice})
+        );
+
+        choise.map((choise,index)=>
+            
+        );
+
+        console.log(dates)
         return (
+
             <div>
                 <h2>{title} / slug : {slug} </h2>
                 {people}
