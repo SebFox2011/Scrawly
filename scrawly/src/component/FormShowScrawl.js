@@ -12,38 +12,15 @@ class FormShowScrawl extends Component {
     }
 
     render() {
-        let participants = [];
-        let dates =[];
-
-
-
-        //const gravatar = 'https://gravatar.com/avatar/' + md5('sebfox@gmail.com') + '?s=32&d=robohash';
 
         const gravatar = 'https://gravatar.com/avatar/';
         const {title, slug, persons, choise} = this.props.scrawl;
 
-        /*const people = persons.map((person) =>
-            <p><img src={gravatar + md5(person.email) + '?s=32&d=robohash'}
-                    alt="Gravatar"/> {person.username} {person.email} </p>
+        const TBodySCrawl = persons.map(person =>
+            <BodyScrawl key={person['@id']} person={person}/>
         );
 
-        persons.map((person) =>
-            participants.push({person})
-        );
-
-        const date = choise.map((choice) =>
-            <p>{choice.date.slice(0, 10)} </p>
-        );
-
-        choise.map((choice) =>
-            dates.push({choice})
-        );*/
-
-       const TBodySCrawl = persons.map(person =>
-           <BodyScrawl key={person['@id']} person={person}/>
-       );
-
-       const THeadScrawl = choise.map(choise=>
+        const THeadScrawl = choise.map(choise =>
             <HeadScrawl key={choise['@id']} choise={choise}/>
         );
 
@@ -60,7 +37,7 @@ class FormShowScrawl extends Component {
                     </tr>
                     </thead>
                     <tbody>
-                        {TBodySCrawl}
+                    {TBodySCrawl}
                     <tr>
                         <td>
                             <div className="user-form-container">
