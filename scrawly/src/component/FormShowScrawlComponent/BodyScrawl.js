@@ -4,17 +4,19 @@ import md5 from "md5";
 class BodyScrawl extends Component {
 
     render() {
-        const people = this.props.person;
         const choise = this.props.choise;
+        const people = this.props.person;
+
         const gravatar = 'https://gravatar.com/avatar/' + md5(people.email) + '?s=32&d=robohash';
 
 
-        const checkDate = choise.map((choise) => {
-            console.log("choise: " + choise["@id"]);
-            console.log("people: " + people.choise["@id"]);
-            return (choise["@id"] === people.choise["@id"]) ?
-                <td className="available"><i className="fa fa-3x fa-check-circle"></i></td> :
-                <td className="unavailable"><i className="fa fa-3x fa-times-circle"></i></td>;
+        let checkDate = 0;
+            checkDate=choise.map((choise) => {
+
+            return (people.choise.find(item => item['@id'] === choise['@id'])) ?
+                <td key={checkDate['@id']} className="available"><i className="fa fa-3x fa-check-circle"></i></td>
+                :
+                <td key={checkDate['@id']} className="unavailable"><i className="fa fa-3x fa-times-circle"></i></td>
         });
 
         return (

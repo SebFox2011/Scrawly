@@ -4,9 +4,13 @@ class FormEditScrawl extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
+
+
+
     }
 
     render() {
+
         return (
             <React.Fragment>
                 <section className="bg-blue">

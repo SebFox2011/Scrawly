@@ -79,6 +79,13 @@ export function updateScrawl(slug) {
     };
 }
 
+//fonction d'ajout de date
+
+/*export createChoise(choise)
+{
+    //TODO
+}*/
+
 //fonction d'affichage de Scrawl
 export function showScrawl(slug) {
     // Appel l'API
