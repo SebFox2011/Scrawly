@@ -8,6 +8,7 @@ export const SHOW_SCRAWL_SUCCESS = 'SHOW_SCRAWL_SUCCESS'
 export const SHOW_SCRAWL_ERROR = 'SHOW_SCRAWL_ERROR'
 export const SCRAWL_ADD_SUCCESS = 'SCRAWL_ADD_SUCCESS'
 export const SCRAWL_ADD_ERROR = 'SCRAWL_ADD_ERROR'
+export const UPDATE_CHOISE = 'UPDATE_CHOISE'
 
 
 /*
@@ -85,6 +86,10 @@ export function updateScrawl(slug) {
 {
     //TODO
 }*/
+
+export function updateDate(choise) {
+    return {type: UPDATE_CHOISE, payload: choise};
+}
 
 //fonction d'affichage de Scrawl
 export function showScrawl(slug) {

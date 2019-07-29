@@ -6,7 +6,8 @@ import {
     UPDATE_SLUG,
     CREATE_SCRAWL_LOADING,
     CREATE_SCRAWL_ERROR,
-    CREATE_SCRAWL_SUCCESS
+    CREATE_SCRAWL_SUCCESS,
+    UPDATE_CHOISE
 } from "../actions/scrawly";
 
 import slugify from "slugify";
@@ -15,7 +16,12 @@ const initialState = { //initialisation à vide des elements d'un scrawl
     scrawl: {
         title: '',
         slug: '',
-        choices: []
+        choices: [],
+        people: []
+    },
+    newdate: {
+        date: "",
+        poll: ""
     },
     error: "",
     scrawlLoading: false,
@@ -70,6 +76,11 @@ function scrawlyApp(state = initialState, action) { //etat initial de l'applicai
                 error: "Erreur lors de la création du Scrawl !",
                 createScrawlLoading: false
             };
+        case UPDATE_CHOISE:
+            return {
+            ...state,
+            scrawl: action.payload
+        };
 
         default:
             return state;
