@@ -14,14 +14,8 @@ import "./css/skeleton.css";
 import './App.css';
 import "./css/style.css"
 
-class App extends Component {
+const App = () => {
 
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
-
-    render() {
         return (
             <div className="App">
                 <header className="App-header">
@@ -38,7 +32,6 @@ class App extends Component {
         );
 
     }
-}
 
 export default App;
 
