@@ -11,12 +11,6 @@
     font-family: 'Fira Sans', sans-serif;
 }
 
-h1 {
-    margin: 0.5em 0;
-    font-style: italic;
-    color: white;
-}
-
 h2{
     margin: 0.5em 0;
     color: black;
@@ -130,7 +124,4 @@ table.poll tbody tr td button {
     margin-top: 1em;
 }
 
-.font404{
-    color: black;
-    font-size: 2em;
-}
+

@@ -1,16 +1,14 @@
-import React, {Component} from 'react';
+import React from 'react'
 
-class CheckBoxScrawl extends Component {
-    render() {
+const CheckBoxScrawl = () => {
 
-        return (
-            <React.Fragment>
-                <td>
-                    <input type="checkbox"/>
-                </td>
-            </React.Fragment>
-        );
-    }
+    return (
+        <React.Fragment>
+            <td>
+                <input type="checkbox" />
+            </td>
+        </React.Fragment>
+    )
 }
 
-export default CheckBoxScrawl;
+export default CheckBoxScrawl

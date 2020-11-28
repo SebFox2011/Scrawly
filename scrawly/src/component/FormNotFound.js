@@ -1,10 +1,19 @@
 import React from 'react'
+import { withStyles } from '@material-ui/core'
 
-const FormNotFound = () => {
-        return (
-            <div>
-                <h1 className="font404">Page non trouvée</h1>
-            </div>
-        )
+const style = {
+    font404: {
+        color: 'black',
+        fontSize: '3em',
+    }
 }
-export default FormNotFound
+
+const FormNotFound = (props) => {
+    const { classes } = props
+    return (
+        <div>
+            <h1 className={classes.font404}>Page non trouvée</h1>
+        </div>
+    )
+}
+export default withStyles(style)(FormNotFound)
